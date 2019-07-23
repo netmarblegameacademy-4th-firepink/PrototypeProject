@@ -7,6 +7,7 @@ public class GunCtrl : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject laserPrefab;
+    public AudioSource ShootSound;
 
     public static SteamVR_TrackedObject controller;
     public static SteamVR_Controller.Device device;
@@ -28,12 +29,12 @@ public class GunCtrl : MonoBehaviour
 
         if (device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
         {
-
+            ShootSound.Play();
             Debug.Log("Trigger Down : R");
             if(Physics.Raycast(   new Ray(firePoint.transform.position, transform.TransformDirection(new Vector3(0, -1, 1))) , out hit , 1000     ))
             {
                 Debug.Log("Hit OBJ : " + hit.transform.gameObject.name);
-
+                if (hit.transform.gameObject.tag == "Enemy") Destroy(hit.transform.gameObject);  //Tag에 적이면 제거
                 
             }
         }

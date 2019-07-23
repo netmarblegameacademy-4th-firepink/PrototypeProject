@@ -62,8 +62,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\#Scripts\EnemyStatus.cs" />
     <Compile Include="Assets\#Scripts\GameManager.cs" />
     <Compile Include="Assets\#Scripts\GunCtrl.cs" />
+    <Compile Include="Assets\#Scripts\MonsterCreate.cs" />
     <Compile Include="Assets\pixel shader\Codexus\Scripts\PixelEffect.cs" />
     <Compile Include="Assets\RobotSphere\Assets\Scripts\RobotFreeAnim.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />

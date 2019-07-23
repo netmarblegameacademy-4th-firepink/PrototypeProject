@@ -7,20 +7,32 @@ public class GameManager : MonoBehaviour
 
     public GameObject StartButton;
     public GameObject HmdSoundPrefab;
-    bool startCheck =false;
-    float timer;
+
+
+
+    public static bool startCheck =false;
+    public static float timer;
+
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
     }
 
     // Update is called once per frame
     void Update()
     {
+        if ( Input.GetKey(KeyCode.Space))
+        {
+            StartButton.SetActive(false);
+            HmdSoundPrefab.SetActive(true);
+            startCheck = true;
+        }
+
+
         if (GunCtrl.device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
         {
-            if(GunCtrl.hit.transform.gameObject.name== StartButton.transform.gameObject.name)
+            if(GunCtrl.hit.transform.gameObject.name == StartButton.transform.gameObject.name )
             {
                 StartButton.SetActive(false);
                 HmdSoundPrefab.SetActive(true);
@@ -36,13 +48,5 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
-
-
-
-    void GameStart()
-    {
-
-    }
 
 }
