@@ -25,11 +25,18 @@ public class GunCtrl : MonoBehaviour
     {
         device = SteamVR_Controller.Input((int)controller.index);
 
-        if(device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
+        if (device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
         {
-            Debug.Log("work!");
-        }
 
+            RaycastHit hit;
+            Debug.Log("Trigger Down : R");
+            if(Physics.Raycast(   new Ray(firePoint.transform.position, transform.TransformDirection(new Vector3(0, -1, 1))) , out hit , 1000     ))
+            {
+                Debug.Log("Hit OBJ : " + hit.transform.gameObject.name);
+            }
+        }
+        Debug.DrawRay(firePoint.transform.position, transform.TransformDirection(new Vector3(0,-1,1)), Color.blue);
+        
     }
 
 
