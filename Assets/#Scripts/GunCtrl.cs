@@ -27,19 +27,25 @@ public class GunCtrl : MonoBehaviour
     {
         device = SteamVR_Controller.Input((int)controller.index);
 
-        if (device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
+        if (device.connected)
         {
-            ShootSound.Play();
-            Debug.Log("Trigger Down : R");
-            if(Physics.Raycast(   new Ray(firePoint.transform.position, transform.TransformDirection(new Vector3(0, -1, 1))) , out hit , 1000     ))
+            if (device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
             {
-                Debug.Log("Hit OBJ : " + hit.transform.gameObject.name);
-                if (hit.transform.gameObject.tag == "Enemy") Destroy(hit.transform.gameObject);  //Tag에 적이면 제거
-                
+                ShootSound.Play();
+                Debug.Log("Trigger Down : R");
+                if (Physics.Raycast(new Ray(firePoint.transform.position, transform.TransformDirection(new Vector3(0, -1, 1))), out hit, 1000))
+                {
+                    Debug.Log("Hit OBJ : " + hit.transform.gameObject.name);
+                    if (hit.transform.gameObject.tag == "Enemy") Destroy(hit.transform.gameObject);  //Tag에 적이면 제거
+
+                }
             }
+            Debug.DrawRay(firePoint.transform.position, transform.TransformDirection(new Vector3(0, -1, 1)), Color.blue);
         }
-        Debug.DrawRay(firePoint.transform.position, transform.TransformDirection(new Vector3(0,-1,1)), Color.blue);
-        
+        else
+        {
+            Debug.Log("컨트롤러에 접속안됨");
+        }
     }
 
 
