@@ -6,6 +6,8 @@ public class EnemyStatus : MonoBehaviour
 {
     public SkinnedMeshRenderer meshRender;
     public Collider hitBox;
+    public GameObject diePrefab;
+    public bool isHit = false;
     [SerializeField]float showTime;
     [SerializeField]float changeTime;
     [SerializeField]float deleteTime;
@@ -30,7 +32,15 @@ public class EnemyStatus : MonoBehaviour
                 hitBox.enabled = true;
                 Debug.Log("DeleteTime : " + (deleteTime + showTime + changeTime));
 
-                if(GameManager.timer >= (showTime+deleteTime + changeTime))
+                if(isHit==true)
+                {
+                    hitBox.enabled = false;
+                    meshRender.enabled = false;
+                    diePrefab.SetActive(true);
+                    Invoke("exit", 0.2f);
+                }
+
+                if(GameManager.timer >= (showTime+deleteTime + changeTime)&&isHit==false)
                 {
                     Debug.Log("*****타임놓침*****");
                     Destroy(this.gameObject);
@@ -43,6 +53,12 @@ public class EnemyStatus : MonoBehaviour
         }
 
 
+    }
+
+
+    void exit()
+    {
+        Destroy(this.gameObject);
     }
 }
 

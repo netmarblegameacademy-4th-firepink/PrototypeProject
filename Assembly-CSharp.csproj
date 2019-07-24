@@ -68,6 +68,7 @@
     <Compile Include="Assets\#Scripts\MonsterCreate.cs" />
     <Compile Include="Assets\pixel shader\Codexus\Scripts\PixelEffect.cs" />
     <Compile Include="Assets\RobotSphere\Assets\Scripts\RobotFreeAnim.cs" />
+    <Compile Include="Assets\sprite muzzle flashes\AnimatedTexture.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_LaserPointer.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_Teleporter.cs" />
