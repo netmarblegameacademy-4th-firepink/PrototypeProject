@@ -8,8 +8,8 @@ public class GameManager : MonoBehaviour
     public GameObject StartButton;
     public GameObject HmdSoundPrefab;
 
-
-
+    public static int HitCount=0;
+    public GameObject Score;
     public static bool startCheck =false;
     public static float timer;
 
@@ -29,7 +29,6 @@ public class GameManager : MonoBehaviour
             startCheck = true;
         }
 
-
         if (GunCtrl.device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
         {
             if(GunCtrl.hit.transform.gameObject.name == StartButton.transform.gameObject.name )
@@ -40,12 +39,18 @@ public class GameManager : MonoBehaviour
             }
         }
 
-
         if (startCheck == true)
         {
             timer += Time.deltaTime;
             Debug.Log("Timer : " + timer);
         }
+
+        if(timer >=38f)
+        {
+            Score.SetActive(true);
+            Score.GetComponent<TextMesh>().text = "Score : " + HitCount;
+        }
+   
     }
 
 

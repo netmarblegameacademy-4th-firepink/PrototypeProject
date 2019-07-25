@@ -40,7 +40,11 @@ public class GunCtrl : MonoBehaviour
             if (Physics.Raycast(new Ray(firePoint.transform.position, transform.TransformDirection(new Vector3(0, -1, 1))), out hit, 1000))
             {
                 Debug.Log("Hit OBJ : " + hit.transform.gameObject.name);
-                if (hit.transform.gameObject.tag == "Enemy") hit.transform.GetComponent<EnemyStatus>().isHit=true;  //Tag에 적이면 제거
+                if (hit.transform.gameObject.tag == "Enemy")
+                {
+                    hit.transform.GetComponent<EnemyStatus>().isHit = true;  //Tag에 적이면 제거
+                    GameManager.HitCount++;
+                }
             }
         }
         if(device.GetPressUp(SteamVR_Controller.ButtonMask.Trigger))

@@ -21,6 +21,11 @@ ScriptsOnlyBuild:
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
     - UnityEditor.Graphs.AnimatorControllerTool
+    UnityEditor.TestRunner.dll:
+    - UnityEditor.TestTools.TestRunner.TestListCacheData
+    UnityEngine.UI.dll:
+    - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.EventSystems.StandaloneInputModule
   sceneClasses:
     Assets/#Scenes/Main.unity:
     - Class: 1
@@ -74,6 +79,10 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9372}
     - Class: 114
+      Script: {instanceID: 9470}
+    - Class: 114
+      Script: {instanceID: 9520}
+    - Class: 114
       Script: {instanceID: 9784}
     - Class: 114
       Script: {instanceID: 9920}
@@ -86,11 +95,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10308}
     - Class: 114
-      Script: {instanceID: 10518}
+      Script: {instanceID: 10520}
     - Class: 114
-      Script: {instanceID: 10580}
+      Script: {instanceID: 10582}
     - Class: 114
-      Script: {instanceID: 10776}
+      Script: {instanceID: 10778}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -104,6 +113,14 @@ ScriptsOnlyBuild:
     - Class: 137
       Script: {instanceID: 0}
     - Class: 157
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
       Script: {instanceID: 0}
     - Class: 220
       Script: {instanceID: 0}
@@ -700,7 +717,7 @@ ScriptsOnlyBuild:
     className: LinearAnimator
   - hash:
       serializedVersion: 2
-      Hash: c1a9a42d04cf612e31bab3f3f1239feb
+      Hash: 5aa51cf3f1d2f583653556de72f04e01
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -802,7 +819,7 @@ ScriptsOnlyBuild:
     className: SpawnAndAttachAfterControllerIsTracking
   - hash:
       serializedVersion: 2
-      Hash: 1a78ce0ffe4d959d8a6b1e2797ad63c3
+      Hash: 8863ace5c0d852b7f37312cf69127e4d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemyStatus
@@ -1114,6 +1131,12 @@ ScriptsOnlyBuild:
     className: SteamVR_PlayArea
   - hash:
       serializedVersion: 2
+      Hash: aa794ff5df05ded73a900686762e5b4e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AnimatedTexture
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -1204,7 +1227,7 @@ ScriptsOnlyBuild:
     className: IgnoreHovering
   - hash:
       serializedVersion: 2
-      Hash: 48befdf93d8fcd75ccf7ae3aab28ff9c
+      Hash: 5adc585c6ead64045a50e6e45558aa78
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GunCtrl
@@ -1337,4 +1360,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/#Scenes/Main.unity
-  playerPath: C:/Users/user/Desktop/33/PrototypeProject.exe
+  playerPath: C:/Users/user/Desktop/fin/PrototypeProject.exe
